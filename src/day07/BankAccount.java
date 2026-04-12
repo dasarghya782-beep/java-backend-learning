@@ -42,20 +42,21 @@ public class BankAccount {
         this.balance=balance;
     }
     public void deposit(double amount){
-        if(isValidAmount(amount)){
+        if(isInValidAmount(amount)){
             System.out.println("Amount cannot be negative or Zero.");
+            return;
         }
         System.out.println("Deposit successfull.");
         balance+=amount;
     }
     public void withdraw(double amount){
-        if(isValidAmount(amount)){
+        if(isInValidAmount(amount)){
             System.out.println("Amount cannot be negative or Zero.");
         }
         balance-=amount;
         System.out.println("Withdraw successfull.");
     }
-    private boolean isValidAmount(double amount){
+    private boolean isInValidAmount(double amount){
         return amount<=0;
     }
     @Override
